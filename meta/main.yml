@@ -32,13 +32,12 @@ galaxy_info:
         - disco
         - eoan
         - focal
-    categories:
-      - cloud
-      - clustering
-      - networking
   galaxy_tags:
     - consul
     - template
+    - consul_template
     - tpl
     - cloud
+    - clustering
+    - networking
     - vault
