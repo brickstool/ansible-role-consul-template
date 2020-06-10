@@ -30,11 +30,12 @@ following command:
 $ sudo systemctl start consul-template@consul
 ```
 
-This means that consul-template is run as a templated service, so you can have
-multiple consul-template instances templated from the same systemd service
-template and they can all be templating completely different consul-template
-templates that could theoretically be consul-template templates for other
-templated consul-templates. Or whatever.
+To summarise, this role configures consul-template as a service template, so
+you can have multiple consul-templates templated from the same service template
+using completely different configurations for templating consul-template
+templates *and* they can all be templating the consul-template templates of
+templated consul-template templates used by other templated consul-templates as
+their consul-template templates. Or, you know, whatever.
 
 ## Requirements
 
