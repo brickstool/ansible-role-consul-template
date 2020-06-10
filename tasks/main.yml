@@ -1,0 +1,5 @@
+---
+# Configure consul-template
+- include_tasks: install.yml
+- include_tasks: config.yml
+...

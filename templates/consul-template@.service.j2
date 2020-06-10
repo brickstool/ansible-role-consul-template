@@ -1,0 +1,21 @@
+[Unit]
+Description=consul-template for %I
+Requires=network-online.target
+After=network-online.target consul.service vault.service nomad.service
+
+[Service]
+ExecStart=/usr/local/bin/consul-template -config={{ consul_template_directory }}/%I.hcl
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStop=/bin/kill -INT $MAINPID
+PIDFile=/run/consul-template-%I.pid
+User={{ consul_template_user }}
+Group={{ consul_template_group }}
+Restart=always
+KillMode=process
+KillSignal=SIGINT
+RestartSec=60s
+LimitNOFILE=4096
+TimeoutSec=5
+
+[Install]
+WantedBy=multi-user.target
