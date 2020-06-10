@@ -35,7 +35,6 @@ galaxy_info:
   galaxy_tags:
     - consul
     - template
-    - consul_template
     - tpl
     - cloud
     - clustering
