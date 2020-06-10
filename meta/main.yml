@@ -2,7 +2,7 @@
 dependencies: []
 
 galaxy_info:
-  role_name: consul-template
+  role_name: consul_template
   author: brickstool
   description: consul-template installation and configuration.
   license: "license (BSD, MIT)"
@@ -37,4 +37,3 @@ galaxy_info:
     - template
     - tpl
     - cloud
-    - vault

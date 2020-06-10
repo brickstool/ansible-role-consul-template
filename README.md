@@ -1,4 +1,4 @@
-# Ansible Role: consul-template
+# Ansible Role: consul_template
 
 This role installs and configures consul-template on systemd-enabled Linux
 systems.
@@ -51,7 +51,7 @@ None.
     - hosts: example-hosts
       become: yes
       roles:
-        - role: brickstool.consul-template
+        - role: brickstool.consul_template
 
 ## License
 
