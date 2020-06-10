@@ -3,25 +3,28 @@
 This role installs and configures consul-template on systemd-enabled Linux
 systems.
 
-The overall aim of this role was to do one thing and one thing well - which in
-this case is installing the consul-template binary and systemd service unit.
-There are no consul-template templates created or distributed, no weird and
-difficult-to-follow task loops, and no exceedingly long list of variables and
-defaults to use (in fact there are only a handful right now, with the
-possibility of slightly increasing that number in the future).
+The overall aim of this role is to do one thing and do it well - which in this
+case is installing the consul-template binary and systemd service unit.
 
-However, what makes this role really stand out from similar roles (based on
-what I've been able to find online anyway) is that it configures
-consul-template as a systemd "instantiated service" (see
+The following items are **not** what this role will do:
+* Distribute or create consul-template templates
+* Allow for heavy tweaking and customization of default options
+* Do insanely complicated things with loops within loops within loops...
+
+What really makes this role unique compared to others (the ones I have seen
+anyway) is that it configures consul-template as a systemd "instantiated
+service" (see
 [here](https://www.freedesktop.org/software/systemd/man/systemd.service.html)
 or `man 5 systemd.service` for details).
 
-The systemd unit file in this repo is configured to launch consul-template with
-the `-config` parameter pointing to `/etc/consul-template.d/%I.hcl` - where
-`%I` is whatever string you pass to the service after the `@` but before the
-`.service` (`systemctl` assumes that you are referring to a service unless you
-specify otherwise). Assuming `/etc/consul-template.d/consul.hcl` exists, an
-instantiated consul-template service could be started like so:
+Configuring the consul-template service in this way means that you can
+effortlessly launch multiple consul-template systemd services that all use
+different configuration files.
+
+For example, if you wanted to use a
+consul-template configuration file located at
+`/etc/consul-template.d/consul.hcl`, you could easily launch it through the
+following command:
 
 ```sh
 $ sudo systemctl start consul-template@consul
