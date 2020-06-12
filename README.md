@@ -23,7 +23,7 @@ Using this role allows you to achieve deeds most unholy, all thanks to the insta
 
 For example, you can have multiple consul-template instances templating entirely separate consul-template templates for any number of services which, theoretically, could be the consul-template templates used by other instantiated consul-templates for templating consul-template templates.
 
-Not that I'd recommend that sort of thing :slightly_smiling:face:
+Not that I'd recommend that sort of thing :slightly_smiling_face:
 
 ## Requirements
 
