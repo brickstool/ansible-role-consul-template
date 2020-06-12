@@ -11,7 +11,7 @@ The following items are **not** what this role will do:
 
 What really makes this role unique compared to others (the ones I have seen anyway) is that it configures consul-template as a systemd "instantiated service" (see [here](https://www.freedesktop.org/software/systemd/man/systemd.service.html) or `man 5 systemd.service` for details).
 
-Configuring the consul-template service in this way means that you can effortlessly launch multiple consul-template systemd services that all use different configuration files.
+Configuring the consul-template service like this means that you can effortlessly launch multiple consul-template systemd services that all use different configuration files.
 
 If you wanted to use a consul-template configuration file located at `/etc/consul-template.d/consul.hcl`, you could easily launch it through the following command:
 
@@ -19,11 +19,11 @@ If you wanted to use a consul-template configuration file located at `/etc/consu
 $ sudo systemctl start consul-template@consul
 ```
 
-Using this role allows you to achieve deeds most unholy, all thanks to the instantiated service unit.
+Thanks to this instantiated service unit, you can achieve deeds most unholy.
 
-For example, you can have multiple consul-template instances templating entirely separate consul-template templates for any number of services which, theoretically, could be the consul-template templates used by other instantiated consul-templates for templating consul-template templates.
+You can have multiple consul-template instances templating entirely separate consul-template templates for any number of services which, theoretically, could be other instantiated consul-templates that then use the templated consul-templates templates for templating other consul-template templates.
 
-Not that I'd recommend that sort of thing :slightly_smiling_face:
+Not that I'd recommend that sort of thing... :slightly_smiling_face:
 
 ## Requirements
 
@@ -32,7 +32,7 @@ For the Ansible controller:
 
 For the target hosts/environment:
 * Linux OS
-* systemd
+* `systemd`
 * A Consul cluster
 * (Optional) A Vault cluster with the PKI secrets engine enabled
 
