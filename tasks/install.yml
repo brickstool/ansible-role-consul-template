@@ -1,7 +1,7 @@
 ---
 - name: Download and unzip the consul-template archive
   unarchive:
-    src: "https://releases.hashicorp.com/consul-template/{{ consul_template_version }}/consul-template_{{ consul_template_version }}_linux_amd64.zip"
+    src: "https://releases.hashicorp.com/consul-template/{{ ctpl_version }}/consul-template_{{ ctpl_version }}_linux_amd64.zip"
     dest: /tmp
     remote_src: yes
     mode: '0755'

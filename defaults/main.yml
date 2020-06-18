@@ -1,10 +1,10 @@
 ---
 # The version of consul-template to download and install.
-consul_template_version: '0.25.0'
+ctpl_version: '0.25.0'
 
 # The user and group that consul-template should be run as.
-consul_template_user: consul-template
-consul_template_group: consul-template
+ctpl_user: consul-template
+ctpl_group: consul-template
 
-# The directory to use for consul-template configuration files
-consul_template_directory: /etc/consul-template.d
+# The base directory to use for consul-template configuration files
+ctpl_directory: /etc/consul-template.d
