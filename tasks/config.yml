@@ -1,19 +1,19 @@
 ---
 - name: Transfer the consul-template systemd service unit file
-  copy:
-    src: consul-template@.service
+  template:
+    src: consul-template@.service.j2
     dest: /etc/systemd/system/consul-template@.service
 
 - name: Ensure the consul-template group exists
   group:
-    name: "{{ consul_template_group }}"
+    name: "{{ ctpl_group }}"
     state: present
 
 - name: Ensure the consul-template user exists
   user:
-    name: "{{ consul_template_user }}"
-    home: "{{ consul_template_directory }}"
-    groups: "{{ consul_template_group }}"
+    name: "{{ ctpl_user }}"
+    home: "{{ ctpl_directory }}"
+    groups: "{{ ctpl_group }}"
     append: yes
     shell: /sbin/nologin
     system: yes
@@ -21,8 +21,8 @@
 
 - name: Ensure the consul-template directory exists with correct permissions
   file:
-    path: "{{ consul_template_directory }}"
+    path: "{{ ctpl_directory }}"
     state: directory
-    owner: "{{ consul_template_user }}"
-    group: "{{ consul_template_group }}"
+    owner: "{{ ctpl_user }}"
+    group: "{{ ctpl_group }}"
 ...
