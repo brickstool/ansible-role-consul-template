@@ -7,7 +7,7 @@
   </a>
 </p>
 
-# Ansible Role: consul_template
+<h1 align="center" style="border-bottom: none;">Ansible Role: consul-template</h1>
 
 This role installs and configures `consul-template` on `systemd`-enabled Linux systems.
 
