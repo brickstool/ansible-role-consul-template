@@ -2,6 +2,9 @@
 # The version of consul-template to download and install.
 ctpl_version: '0.25.0'
 
+# Whether to configure a user + group for consul-template.
+ctpl_configure_user: false
+
 # The user and group that consul-template should be run as.
 ctpl_user: consul-template
 ctpl_group: consul-template

@@ -8,14 +8,16 @@ ExecStart=/usr/local/bin/consul-template -config={{ ctpl_directory }}/%I.hcl
 ExecReload=/bin/kill -HUP $MAINPID
 ExecStop=/bin/kill -INT $MAINPID
 PIDFile=/run/consul-template-%I.pid
-User={{ ctpl_user }}
-Group={{ ctpl_group }}
 Restart=always
 KillMode=process
 KillSignal=SIGINT
 RestartSec=60s
 LimitNOFILE=4096
 TimeoutSec=5
+{%- if ctpl_configure_user %}
+User={{ ctpl_user }}
+Group={{ ctpl_group }}
+{%- endif %}
 
 [Install]
 WantedBy=multi-user.target
