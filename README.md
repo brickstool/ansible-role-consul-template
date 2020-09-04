@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/brickstool/ansible-role-consul-template/actions">
-    <img alt="GitHub Actions" src="https://github.com/brickstool/ansible-role-consul-template/workflows/build/badge.svg?branch=master">
+  <a href="https://github.com/snoord/ansible-role-consul-template/actions">
+    <img alt="GitHub Actions" src="https://github.com/snoord/ansible-role-consul-template/workflows/build/badge.svg?branch=master">
   </a>
   <a href="https://github.com/semantic-release/semantic-release">
     <img alt="semantic-release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg">
@@ -47,7 +47,7 @@ For the target hosts/environment:
 
 ## Dependencies
 
-If you do not already have a Consul cluster installed and configured, you can use my [Ansible role for Consul](https://github.com/brickstool/ansible-role-consul) to create one.
+If you do not already have a Consul cluster installed and configured, you can use my [Ansible role for Consul](https://github.com/snoord/ansible-role-consul) to create one.
 
 ## Example Playbook
 
@@ -55,7 +55,7 @@ If you do not already have a Consul cluster installed and configured, you can us
 - hosts: example-hosts
   become: yes
   roles:
-    - role: brickstool.consul_template
+    - role: snoord.consul_template
 ```
 
 ## License
